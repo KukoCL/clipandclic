@@ -1,8 +1,8 @@
 /* eslint-disable vue/max-len */
 export const appTexts = {
   navbar: {
-    brand1: 'Fennec',
-    brand2: 'Soft',
+    brand1: 'Clip & Clic',
+    brand2: '',
     navigation: {
       home: 'Inicio',
       about: 'Acerca de',
@@ -78,9 +78,9 @@ export const appTexts = {
         'No solo nos tome la palabra. Esto es lo que nuestros clientes satisfechos tienen que decir sobre trabajar con nosotros.',
       testimonials: {
         sarahJohnson:
-          'Fennec Company transformó nuestro negocio con sus soluciones innovadoras. Nuestra productividad aumentó un 300% y la satisfacción del cliente está en su punto más alto.',
+          'Clip & Clic transformó nuestro negocio con sus soluciones innovadoras. Nuestra productividad aumentó un 300% y la satisfacción del cliente está en su punto más alto.',
         michaelChen:
-          'El equipo de Fennec entregó resultados excepcionales. Su experiencia en soluciones en la nube nos ayudó a escalar nuestras operaciones sin problemas.',
+          'El equipo de Clip & Clic entregó resultados excepcionales. Su experiencia en soluciones en la nube nos ayudó a escalar nuestras operaciones sin problemas.',
         emilyRodriguez:
           'Servicio y soporte excepcionales. Entendieron nuestra visión y entregaron una solución que superó nuestras expectativas.',
       },
@@ -112,7 +112,7 @@ export const appTexts = {
   },
   about: {
     hero: {
-      title: 'Acerca de Fennec Company',
+      title: 'Acerca de Clip & Clic',
       description:
         'Somos una empresa de tecnología con visión de futuro dedicada a ayudar a las empresas a prosperar en la era digital a través de soluciones innovadoras y orientación experta.',
       stats: {
@@ -137,10 +137,10 @@ export const appTexts = {
     story: {
       title: 'Nuestra Historia',
       paragraphs: [
-        'La historia de FennecSoft comienza como toda buena idea: entre amigos, café, asados y conversaciones que iban más allá del horario laboral. Lo que al principio parecía una simple lluvia de ideas, pronto tomó forma cuando nos dimos cuenta de que compartíamos algo más que conocimientos técnicos: una pasión profunda por resolver problemas de forma creativa, eficiente y con impacto.',
-        'Así nació FennecSoft—como un espacio donde la experiencia profesional se une con la amistad y la curiosidad tecnológica para crear soluciones que realmente marcan la diferencia. Desde el principio, supimos que no queríamos ser “uno más”. Queríamos ser los que encuentran una vuelta, los que cuestionan, los que proponen.',
+        'La historia de Clip & Clic comienza como toda buena idea: entre amigos, café, asados y conversaciones que iban más allá del horario laboral. Lo que al principio parecía una simple lluvia de ideas, pronto tomó forma cuando nos dimos cuenta de que compartíamos algo más que conocimientos técnicos: una pasión profunda por resolver problemas de forma creativa, eficiente y con impacto.',
+        'Así nació Clip & Clic—como un espacio donde la experiencia profesional se une con la amistad y la curiosidad tecnológica para crear soluciones que realmente marcan la diferencia. Desde el principio, supimos que no queríamos ser “uno más”. Queríamos ser los que encuentran una vuelta, los que cuestionan, los que proponen.',
         'Hoy, seguimos manteniendo esa esencia. El equipo fundador reúne talentos diversos y miradas complementarias, lo que nos permite abordar cada desafío desde múltiples ángulos, siempre manteniendo el foco en los objetivos de nuestros clientes. Porque para nosotros, innovar no es solo crear, es transformar.',
-        'En FennecSoft creemos profundamente en la resiliencia, en la capacidad de adaptarnos, aprender y evolucionar. Sabemos que el cambio es parte del camino, y lo abrazamos sin temor, con la convicción de que cada desafío trae consigo una oportunidad para crecer y avanzar.',
+        'En Clip & Clic creemos profundamente en la resiliencia, en la capacidad de adaptarnos, aprender y evolucionar. Sabemos que el cambio es parte del camino, y lo abrazamos sin temor, con la convicción de que cada desafío trae consigo una oportunidad para crecer y avanzar.',
       ],
       features: {
         expertTeam: 'Equipo Experto',
@@ -183,10 +183,10 @@ export const appTexts = {
     teamBackground: {
       title: 'Background técnico del equipo',
       paragraphs: [
-        'El equipo fundador de Fennec está conformado por profesionales apasionados, resilientes y estratégicos, con más de 60 años de experiencia acumulada en el diseño e implementación de soluciones tecnológicas. Su diversidad de talentos y trayectorias —tanto en el sector público como privado— les permite abordar desafíos complejos con enfoque certero, sensibilidad creativa y ejecución efectiva.',
+        'El equipo fundador de Clip & Clic está conformado por profesionales apasionados, resilientes y estratégicos, con más de 60 años de experiencia acumulada en el diseño e implementación de soluciones tecnológicas. Su diversidad de talentos y trayectorias —tanto en el sector público como privado— les permite abordar desafíos complejos con enfoque certero, sensibilidad creativa y ejecución efectiva.',
         'Desde arquitecturas modernas y sistemas críticos, hasta la gestión de proyectos de alto impacto, el equipo combina profundidad técnica con agilidad, visión estratégica y pensamiento fuera de la caja. Han liderado iniciativas con impacto local e internacional, destacando por su adaptabilidad, rigurosidad y compromiso con la excelencia.',
-        'Fennec cuenta con profesionales certificados internacionalmente en áreas clave de la ingeniería de software, gestión de proyectos y tecnologías emergentes. Sin embargo, su fortaleza no reside únicamente en las certificaciones, sino en cómo articulan sus capacidades dentro de una célula dinámica que transforma problemas en soluciones sólidas, funcionales y escalables.',
-        'Esta unidad técnica representa el corazón operativo de Fennec, alineando lógica y creatividad para impulsar la innovación con propósito.',
+        'Clip & Clic cuenta con profesionales certificados internacionalmente en áreas clave de la ingeniería de software, gestión de proyectos y tecnologías emergentes. Sin embargo, su fortaleza no reside únicamente en las certificaciones, sino en cómo articulan sus capacidades dentro de una célula dinámica que transforma problemas en soluciones sólidas, funcionales y escalables.',
+        'Esta unidad técnica representa el corazón operativo de Clip & Clic, alineando lógica y creatividad para impulsar la innovación con propósito.',
       ],
     },
     values: {
@@ -475,7 +475,7 @@ export const appTexts = {
   },
   footer: {
     companyInfo: {
-      title: 'Fennec Company',
+      title: 'Clip & Clic Company',
       description:
         'Ofrecemos soluciones de negocio modernas para ayudar a su empresa a crecer y tener éxito en la era digital.',
     },
