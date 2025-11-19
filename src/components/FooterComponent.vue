@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { RouterLink } from 'vue-router';
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import { appTexts } from '@/infrastructure/lang/spanish';
 </script>
 
@@ -37,17 +38,17 @@ import { appTexts } from '@/infrastructure/lang/spanish';
               }}</RouterLink>
             </li>
             <li class="mb-2">
-              <RouterLink to="/about" class="text-light text-decoration-none">{{
+              <RouterLink to="/products" class="text-light text-decoration-none">{{
                 appTexts.footer.navigation.links.about
               }}</RouterLink>
             </li>
             <li class="mb-2">
-              <RouterLink to="/services" class="text-light text-decoration-none">{{
+              <RouterLink to="/products" class="text-light text-decoration-none">{{
                 appTexts.footer.navigation.links.services
               }}</RouterLink>
             </li>
             <li class="mb-2">
-              <RouterLink to="/portfolio" class="text-light text-decoration-none">{{
+              <RouterLink to="/products" class="text-light text-decoration-none">{{
                 appTexts.footer.navigation.links.portfolio
               }}</RouterLink>
             </li>
@@ -58,16 +59,16 @@ import { appTexts } from '@/infrastructure/lang/spanish';
           <h6 class="text-uppercase fw-bold mb-3">{{ appTexts.footer.services.title }}</h6>
           <ul class="list-unstyled">
             <li class="mb-2">
-              <RouterLink to="/services" class="text-light text-decoration-none">{{ appTexts.footer.services.links.webDevelopment }}</RouterLink>
+              <RouterLink to="/products" class="text-light text-decoration-none">{{ appTexts.footer.services.links.webDevelopment }}</RouterLink>
             </li>
             <li class="mb-2">
-              <RouterLink to="/services" class="text-light text-decoration-none">{{ appTexts.footer.services.links.mobileApps }}</RouterLink>
+              <RouterLink to="/products" class="text-light text-decoration-none">{{ appTexts.footer.services.links.mobileApps }}</RouterLink>
             </li>
             <li class="mb-2">
-              <RouterLink to="/services" class="text-light text-decoration-none">{{ appTexts.footer.services.links.cloudSolutions }}</RouterLink>
+              <RouterLink to="/products" class="text-light text-decoration-none">{{ appTexts.footer.services.links.cloudSolutions }}</RouterLink>
             </li>
             <li class="mb-2">
-              <RouterLink to="/services" class="text-light text-decoration-none">{{ appTexts.footer.services.links.consulting }}</RouterLink>
+              <RouterLink to="/products" class="text-light text-decoration-none">{{ appTexts.footer.services.links.consulting }}</RouterLink>
             </li>
           </ul>
         </div>

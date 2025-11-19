@@ -14,13 +14,13 @@ import { appTexts } from '@/infrastructure/lang/spanish'
           </p>
           <div class="d-flex flex-column flex-sm-row gap-3 mb-3">
             <RouterLink
-              to="/contact"
+              to="/products"
               class="btn hero-btn overflow-hidden"
             >
               {{ appTexts.home.heroSection.buttons.getStarted }}
             </RouterLink>
             <RouterLink
-              to="/services"
+              to="/products"
               class="btn hero-btn overflow-hidden"
             >
               {{ appTexts.home.heroSection.buttons.ourServices }}

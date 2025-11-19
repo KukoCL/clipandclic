@@ -1,40 +1,36 @@
 <template>
-  <div class="banner">
-    <section class="banner-header">
-      <h1>Meet the Clip &amp; Clic Crew</h1>
-      <p>Tap through the featured shots to jump into each creator's profile.</p>
-    </section>
-
-    <section class="image-banner" aria-label="Featured team carousel">
+  <div class="banner" :style="{ '--color-bisque': COLORS.BISQUE, '--color-dark-brown': COLORS.DARK_BROWN }">
+    <section class="image-banner" aria-label="Featured products carousel">
       <div class="banner-window">
         <div
           class="banner-track"
           :style="{ transform: `translateX(-${activeIndex * 100}%)` }"
           aria-live="polite"
         >
-          <a
-            v-for="banner in bannerItems"
-            :key="banner.alt"
+          <div
+            v-for="product in bannerProducts"
+            :key="product.id"
             class="banner-card"
-            :href="banner.link"
-            rel="noopener"
           >
-            <img :src="banner.src" :alt="banner.alt" loading="lazy" />
+            <img :src="product.images[0]" :alt="product.title" loading="lazy" />
             <div class="banner-overlay">
-              <span>{{ banner.title }}</span>
+              <div class="banner-content">
+                <h2>{{ product.title }}</h2>
+                <p class="banner-price">{{ clpFormat(product.price) }}</p>
+              </div>
             </div>
-          </a>
+          </div>
         </div>
       </div>
 
       <div class="banner-controls" role="tablist">
         <button
-          v-for="(banner, index) in bannerItems"
-          :key="`control-${banner.title}`"
+          v-for="(product, index) in bannerProducts"
+          :key="`control-${product.id}`"
           class="control-dot"
           :class="{ active: index === activeIndex }"
           type="button"
-          :aria-label="`Show ${banner.title}`"
+          :aria-label="`Show ${product.title}`"
           :aria-selected="index === activeIndex"
           role="tab"
           @click="goToSlide(index)"
@@ -45,47 +41,16 @@
 </template>
 
 <script setup lang="ts">
-import { onBeforeUnmount, onMounted, ref } from 'vue';
+import { computed, onBeforeUnmount, onMounted, ref } from 'vue';
+import { products } from '@/composables/data/products';
+import { COLORS } from '@/infrastructure/constants/constants';
+import useValidations from '@/composables/utils/useValidations';
 
-type BannerItem = {
-  title: string;
-  alt: string;
-  link: string;
-  src: string;
-};
+const { clpFormat } = useValidations();
 
-const bannerItems: BannerItem[] = [
-  {
-    title: 'Christian · Creative Director',
-    alt: 'Christian directing a commercial set',
-    link: '/team/christian',
-    src: new URL('../assets/images/team/christian.png', import.meta.url).href,
-  },
-  {
-    title: 'Daniel · Lead Editor',
-    alt: 'Daniel editing footage on a monitor wall',
-    link: '/team/daniel',
-    src: new URL('../assets/images/team/daniel.png', import.meta.url).href,
-  },
-  {
-    title: 'Francisco · Cinematographer',
-    alt: 'Francisco filming on location with camera rig',
-    link: '/team/francisco',
-    src: new URL('../assets/images/team/francisco.png', import.meta.url).href,
-  },
-  {
-    title: 'Gonzalo · Producer',
-    alt: 'Gonzalo reviewing storyboard with client',
-    link: '/team/gonzalo',
-    src: new URL('../assets/images/team/gonzalo.png', import.meta.url).href,
-  },
-  {
-    title: 'Jaime · Post Supervisor',
-    alt: 'Jaime color grading in studio',
-    link: '/team/jaime',
-    src: new URL('../assets/images/team/jaime.png', import.meta.url).href,
-  },
-];
+const bannerProducts = computed(() => {
+  return products.filter(product => product.inBanner);
+});
 
 const activeIndex = ref(0);
 const intervalMs = 4500;
@@ -97,7 +62,7 @@ const goToSlide = (index: number) => {
 };
 
 const showNextSlide = () => {
-  activeIndex.value = (activeIndex.value + 1) % bannerItems.length;
+  activeIndex.value = (activeIndex.value + 1) % bannerProducts.value.length;
 };
 
 const startAutoSlide = () => {
@@ -125,25 +90,11 @@ onBeforeUnmount(() => {
 </script>
 
 <style scoped>
-:root {
-  --color-bisque: #ffe4c4;
-}
-
 .banner {
   padding: 10px;
   display: flex;
   flex-direction: column;
   gap: 2rem;
-}
-
-.banner-header h1 {
-  font-size: clamp(1.8rem, 4vw, 2.6rem);
-  margin-bottom: 0.75rem;
-}
-
-.banner-header p {
-  color: #972805;
-  font-size: 1rem;
 }
 
 .image-banner {
@@ -180,13 +131,34 @@ onBeforeUnmount(() => {
 .banner-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(120deg, rgba(115, 38, 38, 0.5), rgba(115, 38, 38, 0));
   display: flex;
   align-items: flex-end;
   padding: 1.5rem;
+}
+
+.banner-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  background: var(--color-dark-brown);
+  padding: 1rem;
+  border-radius: 12px;
+  width: fit-content;
+}
+
+.banner-content h2 {
+  font-weight: 600;
+  font-size: 1.25rem;
+  color: var(--color-bisque);
+  margin: 0;
+  letter-spacing: 0.02em;
+}
+
+.banner-price {
   font-weight: 600;
   font-size: 1.1rem;
   color: var(--color-bisque);
+  margin: 0;
   letter-spacing: 0.02em;
 }
 
@@ -202,26 +174,31 @@ onBeforeUnmount(() => {
   height: 12px;
   border-radius: 999px;
   border: none;
-  background: rgba(235, 184, 230, 0.35);
+  background: rgba(137, 47, 98, 0.35);
   cursor: pointer;
   transition: all 200ms ease;
 }
 
 .control-dot.active {
   width: 36px;
-  background: #972805;
-}
-
-@media (hover: hover) {
-  .banner-card:hover .banner-overlay {
-    background: linear-gradient(120deg, rgba(115, 38, 38, 0.65), rgba(115, 38, 38, 0.15));
-  }
+  background: var(--color-dark-brown);
 }
 
 @media (max-width: 600px) {
   .banner-overlay {
-    font-size: 1rem;
     padding: 1rem;
+  }
+
+  .banner-content {
+    padding: 0.75rem;
+  }
+
+  .banner-content h2 {
+    font-size: 1rem;
+  }
+
+  .banner-price {
+    font-size: 0.95rem;
   }
 }
 </style>

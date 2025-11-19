@@ -3,13 +3,7 @@
     <div class="product-header">
       <h3>{{ product.title }}</h3>
     </div>
-    <div class="product-image">
-      <img
-        :src="getProductImage(product.id)"
-        :alt="product.title"
-        class="product-img"
-      />
-    </div>
+    <ImageCarousel :images="product.images" :image-alt="product.title" />
     <div class="product-body">
       <p class="product-description">{{ product.description }}</p>
       <div class="product-price">
@@ -21,6 +15,7 @@
 
 <script setup lang="ts">
 import { type Product } from '@/composables/data/products';
+import ImageCarousel from './ImageCarousel.vue';
 
 defineProps<{
   product: Product;
@@ -32,12 +27,6 @@ const formatPrice = (price: number): string => {
     currency: 'CLP',
     minimumFractionDigits: 0,
   }).format(price);
-};
-
-const getProductImage = (productId: number): string => {
-  // Using placeholder images from picsum.photos
-  // Each product gets a unique placeholder image based on its ID
-  return `https://picsum.photos/400/300?random=${productId}`;
 };
 </script>
 
@@ -75,34 +64,6 @@ const getProductImage = (productId: number): string => {
   font-size: 1.25rem;
   font-weight: 600;
   line-height: 1.4;
-}
-
-.product-image {
-  background-color: #f9f9f9;
-  padding: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 200px;
-  border-bottom: 1px solid #e9ecef;
-  overflow: hidden;
-}
-
-.product-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-.image-placeholder {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #ccc;
-  font-size: 3rem;
 }
 
 .product-body {

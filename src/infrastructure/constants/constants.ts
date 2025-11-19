@@ -5,4 +5,6 @@ export const COLORS = {
   PRIMARY: '#FBCEB1',
   BISQUE: '#ffe4c4',
   BISQUE_LIGHT: '#f0d4e8',
+  DARK_BROWN: '#732626',
+  ACCENT_ORANGE: '#972805',
 } as const;
