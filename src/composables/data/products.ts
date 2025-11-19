@@ -8,6 +8,10 @@ export type Product = {
   inBanner?: boolean;
 };
 
+const getImagePath = (filename: string): string => {
+  return `${import.meta.env.BASE_URL}images/products/${filename}`;
+};
+
 export const products: Product[] = [
   // Útiles Escolares
   {
@@ -68,10 +72,10 @@ export const products: Product[] = [
     category: 'navidad',
     inBanner: true,
     images: [
-      '/src/assets/images/products/PAPEL DE REGALO NAVIDEÑO 70X100CM 1 PLIEGO LIBESA ADORNOS.png',
-      '/src/assets/images/products/PAPEL DE REGALO NAVIDEÑO 70X100CM 1 PLIEGO LIBESA BOTAS.jpg',
-      '/src/assets/images/products/PAPEL_DE_REGALO_NAVIDEÑO_70X100CM_1_PLIEGO_LIBESA_MERRY_CHRISTMAS.png',
-      '/src/assets/images/products/PAPEL DE REGALO NAVIDEÑO 70X100CM 1 PLIEGO LIBESA PASCUERO.jpg',
+      getImagePath('PAPEL DE REGALO NAVIDEÑO 70X100CM 1 PLIEGO LIBESA ADORNOS.png'),
+      getImagePath('PAPEL DE REGALO NAVIDEÑO 70X100CM 1 PLIEGO LIBESA BOTAS.jpg'),
+      getImagePath('PAPEL_DE_REGALO_NAVIDEÑO_70X100CM_1_PLIEGO_LIBESA_MERRY_CHRISTMAS.png'),
+      getImagePath('PAPEL DE REGALO NAVIDEÑO 70X100CM 1 PLIEGO LIBESA PASCUERO.jpg'),
     ],
   },
   {
@@ -82,7 +86,7 @@ export const products: Product[] = [
     category: 'navidad',
     inBanner: true,
     images: [
-      '/src/assets/images/products/ETIQUEAS NAVIDEÑAS AUTOADHESIVAS.jpg',
+      getImagePath('ETIQUEAS NAVIDEÑAS AUTOADHESIVAS.jpg'),
     ],
   },
   {
@@ -94,10 +98,10 @@ export const products: Product[] = [
     category: 'navidad',
     inBanner: true,
     images: [
-      '/src/assets/images/products/CINTA MAGICA LISA DORADA 2,7X48CM.png',
-      '/src/assets/images/products/CINTA MAGICA LISA PLATA 2,7X48CM.png',
-      '/src/assets/images/products/CINTA MAGICA LISA ROJA 2,7X48CM.png',
-      '/src/assets/images/products/CINTA MAGICA LISA VERDE 2,7X48CM.png',
+      getImagePath('CINTA MAGICA LISA DORADA 2,7X48CM.png'),
+      getImagePath('CINTA MAGICA LISA PLATA 2,7X48CM.png'),
+      getImagePath('CINTA MAGICA LISA ROJA 2,7X48CM.png'),
+      getImagePath('CINTA MAGICA LISA VERDE 2,7X48CM.png'),
     ],
   },
   {
@@ -107,7 +111,7 @@ export const products: Product[] = [
     price: 2990,
     category: 'navidad',
     inBanner: true,
-    images: ['/src/assets/images/products/CINTA ADHESIVA ANCHA 12MMX30MTS NUOVO.png'],
+    images: [getImagePath('CINTA ADHESIVA ANCHA 12MMX30MTS NUOVO.png')],
   },
 
   // Tecnología - Mouses/Teclados

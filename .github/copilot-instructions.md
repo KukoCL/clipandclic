@@ -85,8 +85,24 @@ npm run format     # Prettier format src/
 ## Data & State Management
 - **Products**: Static array in `composables/data/products.ts` with type `Product[]`
 - **Categories**: `'utiles' | 'navidad' | 'mouses' | 'audio' | 'cables' | 'almacenamiento'`
-- **Images**: Using placeholder service `picsum.photos` with product ID as seed
+- **Images**: 
+  - Product images stored in `public/images/products/` directory
+  - **CRITICAL**: Must use `getImagePath()` helper function to reference images - never hardcode paths
+  - The helper function automatically handles the base URL (`/clipandclic/`) for both dev and production
+  - Placeholder images use `picsum.photos` service with product ID as seed for testing
+  - **Never** use `/src/assets/` paths for product images - they won't work in production builds
 - **Global state**: Pinia stores - currently `appSettingsStore` for language selection
+
+### Adding Product Images
+When adding new product images:
+1. Place image files in `public/images/products/` directory
+2. In `composables/data/products.ts`, use the `getImagePath()` helper function:
+   ```typescript
+   images: [getImagePath('YOUR_IMAGE.png')]
+   ```
+3. The `getImagePath()` function automatically prepends `import.meta.env.BASE_URL + 'images/products/'`
+4. This ensures images work correctly in both development and production with the `/clipandclic/` base path
+5. **Never** hardcode `/images/products/` or `/clipandclic/images/products/` - always use `getImagePath()`
 
 ## Integration Points
 - **API endpoint**: AWS Lambda URL in `constants.ts` (`AWS_CONTACT_ENDPOINT`)
