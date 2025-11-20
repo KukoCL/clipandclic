@@ -14,3 +14,13 @@ export type ServiceKey =
   | 'techConsulting'
   | 'agileEmpowerment'
   | 'trainingPrograms'
+
+export type Product = {
+  id: number;
+  title: string;
+  description: string;
+  price: number;
+  category: 'utiles' | 'navidad' | 'mouses-teclados' | 'audio' | 'cables' | 'almacenamiento';
+  images: string[];
+  inBanner?: boolean;
+}

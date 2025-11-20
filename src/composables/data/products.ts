@@ -1,12 +1,4 @@
-export type Product = {
-  id: number;
-  title: string;
-  description: string;
-  price: number;
-  category: 'utiles' | 'navidad' | 'mouses-teclados' | 'audio' | 'cables' | 'almacenamiento';
-  images: string[];
-  inBanner?: boolean;
-};
+import type { Product } from '@/infrastructure/types';
 
 const getImagePath = (filename: string): string => {
   return `${import.meta.env.BASE_URL}images/products/${filename}`;
