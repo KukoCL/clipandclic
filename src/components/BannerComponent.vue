@@ -157,7 +157,7 @@ onBeforeUnmount(() => {
 .banner-price {
   font-weight: 600;
   font-size: 1.1rem;
-  color: var(--color-bisque);
+  color: v-bind('COLORS.SATURATED_YELLOW');
   margin: 0;
   letter-spacing: 0.02em;
 }

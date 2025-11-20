@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { RouterLink } from 'vue-router'
+// import { RouterLink } from 'vue-router'
 import { appTexts } from '@/infrastructure/lang/spanish'
 </script>
 
@@ -12,7 +12,7 @@ import { appTexts } from '@/infrastructure/lang/spanish'
           <p class="lead mb-4 hero-description">
             {{ appTexts.home.heroSection.description }}
           </p>
-          <div class="d-flex flex-column flex-sm-row gap-3 mb-3">
+          <!-- <div class="d-flex flex-column flex-sm-row gap-3 mb-3">
             <RouterLink
               to="/products"
               class="btn hero-btn overflow-hidden"
@@ -25,7 +25,7 @@ import { appTexts } from '@/infrastructure/lang/spanish'
             >
               {{ appTexts.home.heroSection.buttons.ourServices }}
             </RouterLink>
-          </div>
+          </div> -->
         </div>
       </div>
 

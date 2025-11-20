@@ -2,6 +2,7 @@
 import { RouterView } from 'vue-router';
 import Navbar from './components/NavbarComponent.vue';
 import FooterComponent from './components/FooterComponent.vue';
+import WhatsAppButton from './components/WhatsAppButton.vue';
 </script>
 
 <template>
@@ -11,6 +12,7 @@ import FooterComponent from './components/FooterComponent.vue';
       <RouterView />
     </main>
     <FooterComponent />
+    <WhatsAppButton />
   </div>
 </template>
 

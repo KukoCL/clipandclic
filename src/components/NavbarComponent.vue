@@ -2,6 +2,7 @@
 import { RouterLink } from 'vue-router';
 import { ref } from 'vue';
 import { appTexts } from '@/infrastructure/lang/spanish';
+import { COLORS } from '@/infrastructure/constants/constants';
 
 const isNavCollapsed = ref(true);
 
@@ -15,11 +16,11 @@ const toggleNav = () => {
     <div class="container">
       <RouterLink class="navbar-brand fw-bold" to="/">
         <img
-          src="/favicon.ico"
+          src="/favicon.png"
           alt="Logo"
           width="45"
           height="40"
-          class="d-inline-block align-top me-2 fennec-logo"
+          class="d-inline-block align-top me-4 fennec-logo"
         />
         <span class="brand-text"
           >{{ appTexts.navbar.brand1 }}<span class="text-fennec-orange">{{ appTexts.navbar.brand2 }}</span></span
@@ -68,7 +69,7 @@ const toggleNav = () => {
               <li>
                 <RouterLink
                   class="dropdown-item"
-                  to="/products/mouses"
+                  to="/products/mouses-teclados"
                   @click="isNavCollapsed = true"
                 >
                   {{ appTexts.navbar.navigation.mousesKeyboards }}
@@ -147,11 +148,11 @@ const toggleNav = () => {
 }
 
 .navbar-brand:hover .text-fennec-orange {
-  color: #972805;
+  color: v-bind('COLORS.SATURATED_YELLOW');
 }
 
 .text-fennec-orange {
-  color: #972805;
+  color: v-bind('COLORS.SATURATED_YELLOW');
   transition: color 0.3s ease;
 }
 
@@ -166,7 +167,7 @@ const toggleNav = () => {
 }
 
 .nav-link:hover, .nav-link.router-link-active {
-  color: #972805 !important;
+  color: v-bind('COLORS.SATURATED_YELLOW') !important;
   background: transparent;
 }
 
@@ -177,7 +178,7 @@ const toggleNav = () => {
   left: 0;
   width: 100%;
   height: 2px;
-  background-color: #972805;
+  background-color: v-bind('COLORS.SATURATED_YELLOW');
 }
 
 .navbar-toggler {
@@ -198,7 +199,7 @@ const toggleNav = () => {
 }
 
 .dropdown-item {
-  color: #972805;
+  color: v-bind('COLORS.DARK_BROWN');
   padding: 0.5rem 1rem;
   transition: color 0.3s ease;
   border-radius: 4px;
@@ -207,24 +208,25 @@ const toggleNav = () => {
 
 .dropdown-item:hover {
   background: transparent;
-  color: #972805;
+  color: v-bind('COLORS.SATURATED_YELLOW');
 }
 
 .dropdown-item.active {
   background: transparent;
-  color: #972805;
+  color: v-bind('COLORS.SATURATED_YELLOW');
   font-weight: 600;
 }
 
 .fennec-logo {
   transition: all 0.3s ease;
-  background: transparent;
+  background: white;
+  border-radius: 50%;
+  padding: 5px;
+  transform: scale(1.33);
 }
 
 .fennec-logo:hover {
-  transform: scale(1.05);
   filter: drop-shadow(0 0 8px rgba(151, 40, 5, 0.4));
-  background: transparent;
 }
 
 /* Línea separadora en el menú de idiomas */

@@ -3,7 +3,7 @@ export type Product = {
   title: string;
   description: string;
   price: number;
-  category: 'utiles' | 'navidad' | 'mouse y teclados' | 'audio' | 'cables' | 'almacenamiento';
+  category: 'utiles' | 'navidad' | 'mouses-teclados' | 'audio' | 'cables' | 'almacenamiento';
   images: string[];
   inBanner?: boolean;
 };
@@ -120,7 +120,7 @@ export const products: Product[] = [
     title: 'Mouse Inalámbrico Logitech',
     description: 'Mouse inalámbrico ergonómico con batería de larga duración.',
     price: 19990,
-    category: 'mouse y teclados',
+    category: 'mouses-teclados',
     images: ['https://picsum.photos/400/300?random=11'],
   },
   {
@@ -128,7 +128,7 @@ export const products: Product[] = [
     title: 'Teclado Mecánico RGB',
     description: 'Teclado mecánico gaming con iluminación RGB y switches de calidad.',
     price: 59990,
-    category: 'mouse y teclados',
+    category: 'mouses-teclados',
     images: ['https://picsum.photos/400/300?random=12'],
   },
   {
@@ -136,7 +136,7 @@ export const products: Product[] = [
     title: 'Combo Mouse + Teclado',
     description: 'Combo inalámbrico de mouse y teclado con receptor USB unificado.',
     price: 44990,
-    category: 'mouse y teclados',
+    category: 'mouses-teclados',
     images: ['https://picsum.photos/400/300?random=13'],
   },
   {
@@ -144,7 +144,7 @@ export const products: Product[] = [
     title: 'Mouse Gamer Profesional',
     description: 'Mouse gamer con 7 botones programables y sensor de alta precisión.',
     price: 34990,
-    category: 'mouse y teclados',
+    category: 'mouses-teclados',
     images: ['https://picsum.photos/400/300?random=14'],
   },
 

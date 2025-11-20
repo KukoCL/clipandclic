@@ -102,6 +102,10 @@ import { appTexts } from '@/infrastructure/lang/spanish';
             <p class="mb-0">
               &copy; {{ new Date().getFullYear() }} {{ appTexts.footer.companyInfo.title }}.
               {{ appTexts.footer.copyright }}
+              <a href="https://www.fennecsoft.cl" target="_blank" class="text-light fennecsoft-link">
+                {{ appTexts.footer.copyrightLinkText }}
+                <img src="/clipandclic/tabIcon.ico" alt="FennecSoft" class="fennec-icon" />
+              </a>
             </p>
           </div>
           <!-- <div class="col-md-6 text-md-end">
@@ -130,5 +134,22 @@ footer a:hover {
 }
 .company-name {
   color: #ffd894;
+}
+
+.fennecsoft-link {
+  text-decoration: underline;
+  transition: opacity 0.3s ease;
+}
+
+.fennecsoft-link:hover {
+  opacity: 0.8;
+}
+
+.fennec-icon {
+  width: 16px;
+  height: 16px;
+  margin-left: 4px;
+  margin-bottom: 4px;
+  vertical-align: middle;
 }
 </style>

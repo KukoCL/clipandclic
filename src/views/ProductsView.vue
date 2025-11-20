@@ -3,12 +3,12 @@
     <div class="container py-3">
       <div class="row">
         <div class="col-lg-12">
-          <h1 class="pb-3">{{ pageTitle }}</h1>
+          <h1 class="pb-md-3">{{ pageTitle }}</h1>
           <p class="lead">{{ pageDescription }}</p>
         </div>
       </div>
 
-      <div class="row mt-5">
+      <div class="row mt-md-5">
         <div class="col-lg-4 col-md-6 mb-4" v-for="product in filteredProducts" :key="product.id">
           <ProductCard :product="product" />
         </div>
@@ -79,7 +79,6 @@ const filteredProducts = computed(() => {
 }
 
 .products-view {
-  padding-top: 80px;
   min-height: 100vh;
   color: #972805;
 }
@@ -93,5 +92,11 @@ h1 {
 .lead {
   color: #666;
   font-size: 1.1rem;
+}
+
+@media (min-width: 992px) {
+  .products-view {
+    padding-top: 80px;
+  }
 }
 </style>

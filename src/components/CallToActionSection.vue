@@ -19,18 +19,18 @@ import { appTexts } from '@/infrastructure/lang/spanish';
             {{ appTexts.home.callToActionSection.description }}
           </p>
         </div>
-        <div class="col-lg-4 text-lg-end">
+        <!-- <div class="col-lg-4 text-lg-end">
           <div class="d-flex flex-column flex-sm-row flex-lg-column gap-3">
             <RouterLink to="/contact" class="btn btn-success custom-btn position-relative overflow-hidden btn-lg">
               <FontAwesomeIcon icon="rocket" class="me-2" />
               {{ appTexts.home.callToActionSection.buttons.getStarted }}
             </RouterLink>
-            <!-- <a href="tel:+1-555-123-4567" class="btn btn-outline-light btn-lg">
+            <a href="tel:+1-555-123-4567" class="btn btn-outline-light btn-lg">
               <FontAwesomeIcon icon="phone" class="me-2" />
               {{ appTexts.buttons.callUs }}
-            </a> -->
+            </a>
           </div>
-        </div>
+        </div> -->
       </div>
 
       <!-- Newsletter Signup -->

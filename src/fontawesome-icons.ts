@@ -57,6 +57,7 @@ import {
   faGithub,
   faFacebookF,
   faInstagram,
+  faWhatsapp,
 } from '@fortawesome/free-brands-svg-icons';
 
 // Import only the specific regular icons used in the app
@@ -119,6 +120,7 @@ library.add(
   faGithub,
   faFacebookF,
   faInstagram,
+  faWhatsapp,
 
   // Regular icons
   farStar,

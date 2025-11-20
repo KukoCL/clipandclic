@@ -7,4 +7,5 @@ export const COLORS = {
   BISQUE_LIGHT: '#f0d4e8',
   DARK_BROWN: '#732626',
   ACCENT_ORANGE: '#972805',
+  SATURATED_YELLOW: '#FFD700',
 } as const;
