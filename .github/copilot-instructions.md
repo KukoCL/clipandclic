@@ -104,6 +104,70 @@ When adding new product images:
 4. This ensures images work correctly in both development and production with the `/clipandclic/` base path
 5. **Never** hardcode `/images/products/` or `/clipandclic/images/products/` - always use `getImagePath()`
 
+### Updating Products Catalog
+When the user requests to update the products catalog, follow this workflow:
+
+**Step 1: Check Available Product Images**
+1. List all files in `public/images/products/` directory
+2. These image files are the **source of truth** for which products should exist in the catalog
+3. Each image filename contains product information (name, variant, specifications)
+
+**Step 2: Identify Category**
+- Ask the user which category to update if not specified: `'utiles' | 'navidad' | 'mouses-teclados' | 'audio' | 'cables' | 'almacenamiento'`
+- The `products` constant in `composables/data/products.ts` is organized with comment headers for each category:
+  - `// Útiles Escolares`
+  - `// Especial Navidad`
+  - `// Tecnología - Mouses/Teclados`
+  - `// Tecnología - Audio`
+  - `// Tecnología - Cables`
+  - `// Tecnología - Almacenamiento`
+
+**Step 3: Remove Example Products**
+- Delete all placeholder products in the target category that use `picsum.photos` images
+- Example products are for testing only and should be replaced with real product data
+
+**Step 4: Group Similar Products**
+- Analyze image filenames to identify product variants (different colors, sizes, models)
+- Group similar products into single entries with multiple images
+- Example grouping pattern:
+  ```typescript
+  {
+    id: 10,
+    title: 'Cinta Mágica Lisa',
+    description: 'Cinta mágica lisa 2.7x48cm, variedades de colores (dorada, plata, roja, verde) para decoración.',
+    price: 0,
+    category: 'navidad',
+    inBanner: true,
+    images: [
+      getImagePath('CINTA MAGICA LISA DORADA 2,7X48CM.png'),
+      getImagePath('CINTA MAGICA LISA PLATA 2,7X48CM.png'),
+      getImagePath('CINTA MAGICA LISA ROJA 2,7X48CM.png'),
+      getImagePath('CINTA MAGICA LISA VERDE 2,7X48CM.png'),
+    ],
+  }
+  ```
+
+**Step 5: Create Product Entries**
+- Add new product objects with:
+  - **id**: Unique sequential number (continue from existing IDs)
+  - **title**: Extract from filename, capitalize properly, use Spanish
+  - **description**: Brief description mentioning variants/specs from filenames, in Spanish
+  - **price**: Set to `0` initially (user will update manually)
+  - **category**: The target category
+  - **images**: Array using `getImagePath('filename.png')` for each variant
+  - **inBanner** (optional): User decides which products to feature
+
+**Step 6: Verify Completeness**
+- Cross-check that all image files from `public/images/products/` are included in the products array
+- Ensure no duplicate entries exist
+- Maintain existing products that already have real images
+
+**Post-Update Reminders**
+After updating products, remind the user to:
+1. **Manually update prices** in `composables/data/products.ts` - replace `price: 0` with actual prices
+2. **Set banner products** - add `inBanner: true` to products they want featured in the home page banner
+3. **Review descriptions** - ensure Spanish descriptions are accurate and complete
+
 ## Integration Points
 - **API endpoint**: AWS Lambda URL in `constants.ts` (`AWS_CONTACT_ENDPOINT`)
 - **External services**: Axios for HTTP (wrapped in `useApi()`)
