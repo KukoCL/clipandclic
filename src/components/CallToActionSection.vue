@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { RouterLink } from 'vue-router';
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
+// import { RouterLink } from 'vue-router';
+// import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import { appTexts } from '@/infrastructure/lang/spanish';
 
 // const subscribeNewsletter = () => {
