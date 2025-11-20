@@ -2,6 +2,8 @@
 import { RouterLink } from 'vue-router';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import { appTexts } from '@/infrastructure/lang/spanish';
+
+const tabIconPath = `${import.meta.env.BASE_URL}tabIcon.ico`;
 </script>
 
 <template>
@@ -104,7 +106,7 @@ import { appTexts } from '@/infrastructure/lang/spanish';
               {{ appTexts.footer.copyright }}
               <a href="https://www.fennecsoft.cl" target="_blank" class="text-light fennecsoft-link">
                 {{ appTexts.footer.copyrightLinkText }}
-                <img src="/clipandclic/tabIcon.ico" alt="FennecSoft" class="fennec-icon" />
+                <img :src="tabIconPath" alt="FennecSoft" class="fennec-icon" />
               </a>
             </p>
           </div>
